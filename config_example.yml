@@ -1,0 +1,9 @@
+strategy_name: Event-Aware Liquidity Hunter
+exchange: Hyperliquid
+markets: [BTC-USD, ETH-USD, SOL-USD]
+indicators: {ema_fast: 50, ema_slow: 200, atr_period: 14, rsi_period: 14, liquidity_lookback: 20}
+entry_rules: {min_risk_reward: 1.5, min_atr_pct: 0.001, max_atr_pct: 0.05, atr_stop_multiplier: 1.2, atr_take_profit_multiplier: 2.0}
+exit_rules: {atr_extended_take_profit_multiplier: 3.0, momentum_extension_threshold: 0.65, momentum_exhaustion_threshold: -0.4}
+event_scoring: {event_risk_threshold: 0.7}
+risk_rules: {risk_per_trade: 0.01, max_risk_per_trade: 0.015, max_concurrent_positions: 2, daily_drawdown_stop: 0.03, total_drawdown_stop: 0.05}
+execution: {live_trading: false, paper_trading: true}
